@@ -11,13 +11,7 @@
   --white: #dcdfe4;
   --grey: #5a6374;
   --shadow: #5a637444;
-  --red: #e06c75;
-  --green: #98c379;
-  --yellow: #e5c07b;
-  --blue: #61afef;
-  --violet: #c678dd;
-  --brain: #fc76a3;
-  --cyan: #56b6c2;
+  --green: #42b883;
 }
 body {
   background: var(--background);
@@ -43,7 +37,7 @@ h1 {
 }
 
 h2{
-  color:var(--grey);
+  color:var(--green);
   font-size: 2em;
 }
 
