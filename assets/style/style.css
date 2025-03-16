@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --background: #282c34;
   --white: #dcdfe4;
@@ -13,6 +14,7 @@
   --shadow: #5a637444;
   --green: #42b883;
 }
+
 body {
   background: var(--background);
   font-family: "Ubuntu Mono", monospace;
@@ -20,138 +22,43 @@ body {
   font-style: normal;
   font-size: 1em;
 }
+
 i {
   font-size: 2.5rem;
-}
-a {
   color: var(--white);
 }
+
+a {
+  color: var(--green);
+}
+
 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 1rem;
 }
+
 h1 {
   font-size: 2rem;
 }
 
-h2{
-  color:var(--green);
+h2 {
+  color: var(--green);
   font-size: 2em;
 }
 
-.wrapper{
-  display:grid;
-  width:90%;
-  margin: auto;
-  gap:2rem;
-  padding: 0.5rem 0;
+ul {
+  list-style-type: circle;
+  padding-left: 1rem;
 }
 
-.wrapper div {
-  border-radius: 1rem;
-  color: var(--white);
+ul li::marker {
+  color: var(--green);
 }
-.two,.three,.six{
-  display: none;
-}
-.four img{
-  max-width:200px;
-}
-.seven{
+
+.links {
   display: flex;
-  gap:0.5rem;
-}
-@media screen and (min-width: 1200px) {
-  h1 {
-    font-size: 3rem;
-  }
-
-  .wrapper {
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    height: 100vh;
-    gap:1rem;
-    width: min(calc(100% - 1rem), 1200px);
-  }
-
-  .one {
-    grid-column: 1 / 5;
-    grid-row: 1 / 3;
-    padding: 3rem;
-    background: var(--shadow);
-  }
-
-  .two {
-    display:block;
-    grid-column: 5 / 7;
-    grid-row: 1 / 3;
-  }
-  .three {
-    display:block;
-    grid-column: 7 / 9;
-    grid-row: 1 / 3;
-  }
-  .four {
-    grid-column: 1 / 3;
-    grid-row: 3 / 5;
-  }
-  .four img{
-    max-width:100%;
-  }
-  .five {
-    grid-column: 3 / 6;
-    grid-row: 3 / 5;
-    background: var(--shadow);
-    padding: 2rem;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .six {
-    display:block;
-    grid-column: 6 / 8;
-    grid-row: 3 / 5;
-    background: var(--shadow);
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2.5rem;
-  }
-  .seven {
-    grid-column: 8 / 9;
-    grid-row: 3 / 5;
-    flex-direction: column;
-    display: flex;
-    gap: 1rem;
-  }
-  .seven div {
-    height: 100%;
-    align-items: center;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background: var(--shadow);
-  }
-  .eight {
-    grid-column: 1 / 5;
-    grid-row: 5 / 7;
-    background: var(--shadow);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .nine {
-    grid-column: 5 / 9;
-    grid-row: 5 / 7;
-    background: var(--shadow);
-    padding: 2rem;
-  }
+  flex-direction: column;
 }
 
 .orb {
@@ -187,7 +94,207 @@ span {
   0% {
     left: 0;
   }
+
   100% {
     left: -100%;
+  }
+}
+
+.parent {
+  display: grid;
+  height: 100vh;
+  padding: 1rem;
+  width: 90%;
+  margin: auto;
+
+  gap: 1rem;
+}
+
+.parent div {
+  color: var(--white);
+}
+
+.div2,
+.div3,
+.div6,
+.div12 {
+  display: none;
+}
+
+img {
+  max-width: 200px;
+}
+
+.div7 {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .parent {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: min(calc(100% - 1rem), 1200px);
+  }
+
+  .div1 {
+    grid-column: span 4 / span 4;
+    grid-row: span 3 / span 3;
+    background: var(--shadow);
+    padding: 1rem;
+  }
+
+  .div2 {
+    display: block;
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+  }
+
+  .div3 {
+    display: block;
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 7;
+  }
+
+  .div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-row-start: 4;
+  }
+
+  .div5 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 4;
+    background: var(--shadow);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .div6 {
+    display: block;
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 6;
+    grid-row-start: 4;
+    background: var(--shadow);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+
+  .div7 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 8;
+    grid-row-start: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .div7 div {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: var(--shadow);
+  }
+
+  .div8 {
+    grid-column: span 8 / span 8;
+    grid-row-start: 7;
+    background: var(--shadow);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .div9 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-row-start: 8;
+  }
+
+  .div10 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 8;
+  }
+
+  .div11 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+    grid-row-start: 8;
+  }
+
+  .div12 {
+    display: block;
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 7;
+    grid-row-start: 8;
+    background: var(--shadow);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flip-box {
+    background-color: transparent;
+    height: 100%;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-box-front,
+  .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  
+  }
+  
+  .flip-box-back {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--background);
+    color: var(--white);
+    transform: rotateY(180deg);
+    border: 2px solid var(--shadow);
   }
 }
